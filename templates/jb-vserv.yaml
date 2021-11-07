@@ -1,0 +1,26 @@
+# doppler-template.yaml
+# Import this template into doppler by loading the following url in a browser:
+# https://dashboard.doppler.com/workplace/template/import?template=https://gist.githubusercontent.com/bjesuiter/a13b4868534b09620cc97a2ed752d673/raw/6e6abbd92ab688fdd3a0d7369ab7f12ebfb8a879/doppler-template.yaml
+projects:
+  - name: 'vserv-' # Name may contain lowercase letters, spaces, numbers, hyphens, and underscores
+    description: 'Vserv service for bjesuiter: '
+
+    # List of totally customizable environments, e.g Test, Stage, QA, CI-CD
+    environments:
+      - name: 'Development' # Name may contain letters, spaces, numbers, hyphens, and underscores
+        slug: 'dev' # Slug may contain letters, numbers, hyphens, and underscores
+        configs:
+          - slug: 'dev' # First slug *must* match environment slug name
+
+      - name: 'Production'
+        slug: 'prod'
+        configs:
+          - slug: 'prod'
+
+    # Define secrets for each environment
+    secrets:
+      dev:
+        ENV: 'development'
+
+      prod:
+        ENV: 'production'
